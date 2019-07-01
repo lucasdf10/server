@@ -1,16 +1,20 @@
 
 const express = require('express');
 const app = express();
-app.use(express.static('cv'));
+app.use(express.static('public'));
 const path = require('path');
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname+'/cv/index.html'));
+  res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 app.get('/easytracking', (req, res) => {
-  res.send("EASY TRACKING");
+  res.json({ ok: true });
 });
+
+app.get('/autotreinamento',(req,res)=>{
+	res.json({ok:true});
+})
 
 
 const port = 3000;
