@@ -17,7 +17,7 @@ app.get('/autotreinamento',(req,res)=>{
   var o = {};
   var key = "question";
   o[key] = [];
-  var answer = []
+  var answer = new Array();
 
   for(var i=1;i<4;i++){
     
@@ -32,7 +32,7 @@ app.get('/autotreinamento',(req,res)=>{
     o[key].push(question);
   }
 
-	res.json(JSON.stringify(o));
+	res.json(o);
 })
 
 
