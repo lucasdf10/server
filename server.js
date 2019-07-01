@@ -29,7 +29,7 @@ app.get('/autotreinamento',(req,res)=>{
 
       answer.push({title:`Resposta ${i*j}`});
     }
-    var random = Math.floor(Math.random() * numA - 1) + 1;
+    var random = Math.floor(Math.random() * (numA - 1) + 1);
     var question = {
       title:`Pergunta ${i}`,
       option:random,
