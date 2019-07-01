@@ -20,13 +20,15 @@ app.get('/autotreinamento/QA',(req,res)=>{
   
 
   var numQ = Math.floor(Math.random() * 20) + 1;
+  
  
 
   for(var i=1;i<=numQ;i++){
     var answer = new Array();
     var numA = Math.floor(Math.random() * 4 + 1);
     numA++;
-    for(j=1;j<numA;j++){
+    
+    for(j=1;j<=numA;j++){
 
       answer.push({title:`Resposta ${i*j}`});
     }
