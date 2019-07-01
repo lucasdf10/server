@@ -24,12 +24,12 @@ app.get('/autotreinamento',(req,res)=>{
 
   for(var i=1;i<=numQ;i++){
     var answer = new Array();
-    var numA = Math.floor(Math.random() * 5) + 2 ;
+    var numA = Math.floor(Math.random() * 3) + 2 ;
     for(j=1;j<numA;j++){
 
       answer.push({title:`Resposta ${i*j}`});
     }
-    var random = Math.floor(Math.random() * numA) + 1;
+    var random = Math.floor(Math.random() * numA - 1) + 1;
     var question = {
       title:`Pergunta ${i}`,
       option:random,
