@@ -13,7 +13,25 @@ app.get('/easytracking', (req, res) => {
 });
 
 app.get('/autotreinamento',(req,res)=>{
-	res.json({ok:true});
+
+  for(var i=1;i<4;i++){
+    
+    var o = {};
+    var key = "question";
+    o[key] = [];
+    var answer = []
+    answer.push(`Resposta ${i}`);
+
+    var question = {
+      title:`Pergunta ${i}`,
+      option:`a`,
+      answer:answer
+    };
+
+    o[key].push(question);
+  }
+
+	res.json(JSON.stringify(o));
 })
 
 
