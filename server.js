@@ -14,12 +14,13 @@ app.get('/easytracking', (req, res) => {
 
 app.get('/autotreinamento',(req,res)=>{
 
+  var o = {};
+  var key = "question";
+  o[key] = [];
+  var answer = []
+
   for(var i=1;i<4;i++){
     
-    var o = {};
-    var key = "question";
-    o[key] = [];
-    var answer = []
     answer.push(`Resposta ${i}`);
 
     var question = {
