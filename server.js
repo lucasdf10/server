@@ -24,9 +24,8 @@ app.get('/autotreinamento/QA',(req,res)=>{
 
   for(var i=1;i<=numQ;i++){
     var answer = new Array();
-    var max = 5;
-    var min = 2;
-    var numA = Math.floor(Math.random() * (max - min + 1) + min);
+    var numA = Math.floor(Math.random() * 4 + 1);
+    numA++;
     for(j=1;j<numA;j++){
 
       answer.push({title:`Resposta ${i*j}`});
