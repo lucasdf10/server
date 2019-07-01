@@ -19,7 +19,7 @@ app.get('/autotreinamento',(req,res)=>{
   o[key] = [];
   
 
-  for(var i=1;i<4;i++){
+  for(var i=1;i<=10;i++){
     var answer = new Array();
     for(j=1;j<5;j++){
 
