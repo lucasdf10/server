@@ -12,7 +12,7 @@ app.get('/easytracking', (req, res) => {
   res.json({ ok: true });
 });
 
-app.get('/autotreinamento',(req,res)=>{
+app.get('/autotreinamento/QA',(req,res)=>{
 
   var o = {};
   var key = "question";
@@ -40,7 +40,42 @@ app.get('/autotreinamento',(req,res)=>{
   }
 
 	res.json(o);
-})
+});
+
+app.get('/autotreinamento/links',(req,res)=>{
+
+  var o = {};
+  var key = "video";
+
+  var video1 = {
+    name:"Gerdau | Inovação",
+    link:"https://www.youtube.com/watch?v=Rb5JwhIozkc"
+  };
+
+  var video2 = {
+    name:"Gerdau | 1 edicação Hackaton",
+    link:"https://www.youtube.com/watch?v=nR3P3wl9yIs"
+  };
+
+  var video3 = {
+    name:"Gerdau | Digital Inovation",
+    link:"https://www.youtube.com/watch?v=TFKWKwJ_vpE"
+  };
+
+  var video4 = {
+    name:"Gerdau | Inovação na Mineração",
+    link:"https://www.youtube.com/watch?v=TJDuHttoo8E"
+  };
+
+  o[key] = [];
+  o[key].push(video1);
+  o[key].push(video2);
+  o[key].push(video3);
+  o[key].push(video4);
+
+  res.json(o);
+
+});
 
 
 const port = 3000;
