@@ -19,9 +19,12 @@ app.get('/autotreinamento',(req,res)=>{
   o[key] = [];
   
 
-  for(var i=1;i<=10;i++){
+  var mumQ = Math.floor(Math.random() * 20) + 1 
+  var numA = Math.floor(Math.random() * 5) + 2 
+
+  for(var i=1;i<=numQ;i++){
     var answer = new Array();
-    for(j=1;j<5;j++){
+    for(j=1;j<numA;j++){
 
       answer.push({title:`Resposta ${i*j}`});
     }
