@@ -52,29 +52,25 @@ app.get('/autotreinamento/links',(req,res)=>{
 
   var video1 = {
     name:"Gerdau | Inovação",
-    link:"https://www.youtube.com/watch?v=Rb5JwhIozkc"
+    link:"http://lucasfeitosa.online/videos/Aula1.mp4"
   };
 
   var video2 = {
     name:"Gerdau | 1 edicação Hackaton",
-    link:"https://www.youtube.com/watch?v=nR3P3wl9yIs"
+    link:"http://lucasfeitosa.online/videos/Aula2.mp4"
   };
 
   var video3 = {
     name:"Gerdau | Digital Inovation",
-    link:"https://www.youtube.com/watch?v=TFKWKwJ_vpE"
+    link:"http://lucasfeitosa.online/videos/Aula3.mp4"
   };
 
-  var video4 = {
-    name:"Gerdau | Inovação na Mineração",
-    link:"https://www.youtube.com/watch?v=TJDuHttoo8E"
-  };
+
 
   o[key] = [];
   o[key].push(video1);
   o[key].push(video2);
   o[key].push(video3);
-  o[key].push(video4);
 
   res.json(o);
 
