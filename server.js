@@ -30,12 +30,18 @@ app.get('/autotreinamento/QA',(req,res)=>{
     
     for(j=1;j<=numA;j++){
 
-      answer.push({title:`Resposta ${i*j}`});
+      var x = Math.random();
+
+      answer.push(
+        {
+          dsAnswer:`Resposta ${i*j}`,
+          flOption:Math.round(x)
+    
+    });
     }
     var random = Math.floor(Math.random() * (numA - 1) + 1);
     var question = {
-      title:`Pergunta ${i}`,
-      option:random,
+      dsQuestion:`Pergunta ${i}`,
       answer:answer
     };
 
@@ -48,29 +54,70 @@ app.get('/autotreinamento/QA',(req,res)=>{
 app.get('/autotreinamento/links',(req,res)=>{
 
   var o = {};
-  var key = "video";
+  var key = "training";
 
-  var video1 = {
-    name:"Gerdau | Inovação",
-    link:"http://lucasfeitosa.online/videos/Aula1.mp4"
+  var training = {
+    idTraining:1,
+    dsTraining:"Gerdau | Inovação",
+    TrainingType:"Coorporativo",
+    // plant: {
+    //   idPlant:189,
+    //   dsPlant:"Varzea do Lopes"
+    // },
+    // bay:{
+    //   idBay:41,
+    //   dsBay:"ESTOQUE 8-A"
+    // },
+    dsUrl:"http://lucasfeitosa.online/videos/Aula1.mp4",
+    nrQuestions:10,
+    nrMinApproval:7,
+    dtExpireTraining:"2020-07-23",
+    
   };
 
-  var video2 = {
-    name:"Gerdau | 1 edicação Hackaton",
-    link:"http://lucasfeitosa.online/videos/Aula2.mp4"
+
+  var training2 = {
+    idTraining:2,
+    dsTraining:"Gerdau | Digital Inovation",
+    flType:"Basico",
+    plant: {
+      idPlant:189,
+      dsPlant:"Varzea do Lopes"
+    },
+    // bay:{
+    //   idBay:272,
+    //   dsBay:"ESTOQUE 8-B"
+    // },
+    dsUrl:"http://lucasfeitosa.online/videos/Aula2.mp4",
+    nrQuestions:10,
+    nrMinApproval:7,
+    dtExpireTraining:"2020-07-23",
+    
   };
 
-  var video3 = {
-    name:"Gerdau | Digital Inovation",
-    link:"http://lucasfeitosa.online/videos/Aula3.mp4"
+  var training3 = {
+    idTraining:3,
+    dsTraining:"Gerdau | 1 edicação Hackaton",
+    flType:"Específico",
+    plant: {
+      idPlant:189,
+      dsPlant:"Varzea do Lopes"
+    },
+    bay:{
+      idBay:266,
+      dsBay:"ESTOQUE 6-A"
+    },
+    dsUrl:"http://lucasfeitosa.online/videos/Aula3.mp4",
+    nrQuestions:10,
+    nrMinApproval:7,
+    dtExpireTraining:"2020-07-23",
+    
   };
-
-
 
   o[key] = [];
-  o[key].push(video1);
-  o[key].push(video2);
-  o[key].push(video3);
+  o[key].push(training);
+  o[key].push(training2);
+  o[key].push(training3);
 
   res.json(o);
 
