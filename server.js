@@ -59,7 +59,7 @@ app.get('/autotreinamento/links',(req,res)=>{
   var training = {
     idTraining:1,
     dsTraining:"Gerdau | Inovação",
-    TrainingType:"Coorporativo",
+    trainingType:"Coorporativo",
     // plant: {
     //   idPlant:189,
     //   dsPlant:"Varzea do Lopes"
@@ -79,7 +79,7 @@ app.get('/autotreinamento/links',(req,res)=>{
   var training2 = {
     idTraining:2,
     dsTraining:"Gerdau | Digital Inovation",
-    flType:"Basico",
+    trainingType:"Basico",
     plant: {
       idPlant:189,
       dsPlant:"Varzea do Lopes"
@@ -98,7 +98,7 @@ app.get('/autotreinamento/links',(req,res)=>{
   var training3 = {
     idTraining:3,
     dsTraining:"Gerdau | 1 edicação Hackaton",
-    flType:"Específico",
+    trainingType:"Específico",
     plant: {
       idPlant:189,
       dsPlant:"Varzea do Lopes"
