@@ -19,7 +19,7 @@ app.get('/autotreinamento/QA',(req,res)=>{
   o[key] = [];
   
 
-  var numQ = Math.floor(Math.random() * 20) + 1;
+  var numQ = 10;
   
  
 
@@ -90,7 +90,7 @@ app.get('/autotreinamento/links',(req,res)=>{
     // },
     dsUrl:"http://lucasfeitosa.online/videos/Aula2.mp4",
     nrQuestions:10,
-    nrMinApproval:7,
+    nrMinApproval:8,
     dtExpireTraining:"2020-07-23",
     
   };
@@ -98,7 +98,7 @@ app.get('/autotreinamento/links',(req,res)=>{
   var training3 = {
     idTraining:3,
     dsTraining:"Gerdau | 1 edicação Hackaton",
-    trainingType:"Específico",
+    trainingType:"Especifico",
     plant: {
       idPlant:189,
       dsPlant:"Varzea do Lopes"
@@ -109,7 +109,7 @@ app.get('/autotreinamento/links',(req,res)=>{
     },
     dsUrl:"http://lucasfeitosa.online/videos/Aula3.mp4",
     nrQuestions:10,
-    nrMinApproval:7,
+    nrMinApproval:6,
     dtExpireTraining:"2020-07-23",
     
   };
