@@ -60,6 +60,10 @@ app.get('/autotreinamento/links',(req,res)=>{
     idTraining:1,
     dsTraining:"Gerdau | Inovação",
     trainingType:"Coorporativo",
+    trainigStatus:{
+      idTrainingStatus:1,
+      dsTrainingStatus:"Pendente"
+    },
     // plant: {
     //   idPlant:189,
     //   dsPlant:"Varzea do Lopes"
@@ -84,6 +88,10 @@ app.get('/autotreinamento/links',(req,res)=>{
       idPlant:189,
       dsPlant:"Varzea do Lopes"
     },
+    trainigStatus:{
+      idTrainingStatus:1,
+      dsTrainingStatus:"Pendente"
+    },
     // bay:{
     //   idBay:272,
     //   dsBay:"ESTOQUE 8-B"
@@ -102,6 +110,10 @@ app.get('/autotreinamento/links',(req,res)=>{
     plant: {
       idPlant:189,
       dsPlant:"Varzea do Lopes"
+    },
+    trainigStatus:{
+      idTrainingStatus:2,
+      dsTrainingStatus:"Concluído"
     },
     bay:{
       idBay:266,
