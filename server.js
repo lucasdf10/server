@@ -6,11 +6,10 @@ const ejs = require('ejs');
 const fs = require('fs');
 
 const app = express();
-app.use(express.static('public'));
-app.set('view engine', 'ejs')
 
+app.set('view engine', 'ejs')
 // Set static folder
-app.use(express.static('./public'))
+app.use(express.static('static'))
 
 app.use(
   bodyParser.urlencoded({
@@ -21,7 +20,7 @@ app.use(
 const path = require('path');
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname+'/public/index.html'));
+  res.render('index');
 });
 
 app.get('/easytracking', (req, res) => {
