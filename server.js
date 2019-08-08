@@ -27,6 +27,31 @@ app.get('/easytracking', (req, res) => {
   res.render('easytracking');
 });
 
+app.post('/easytracking', (req, res, next) => {
+  // Get the text to generate QR code
+  let qr_txt = req.body.qr_text;
+  
+  // Generate QR Code from text
+  var qr_png = qr.imageSync(qr_txt,{ type: 'png'})
+
+  // Generate a random file name 
+  let qr_code_file_name = new Date().getTime() + '.png';
+
+  fs.writeFileSync('./static/qr/' + qr_code_file_name, qr_png, (err) => {
+      if(err){
+          console.log(err);
+      }
+      
+  })
+
+  // Send the link of generated QR code
+  res.send({
+      'qr_img': "qr/" + qr_code_file_name
+  });
+
+});
+
+
 app.get('/autotreinamento/QA',(req,res)=>{
 
   var o = {};
