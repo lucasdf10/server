@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width/2, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <title>Lucas Feitosa</title>
+  <!-- Arquivos referentes ao css e bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Arquivos referentes ao fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!-- Arquivos de Script do bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!-- fontes personalizadas -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento" rel="stylesheet">
+
+</head>
+
+<body>
+  <section id="presentation">
+    <div id="navbar-container">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+           
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h1>Lucas Feitosa</h1>
+    <h5>Currículo Interativo</h5>
+    <img class="cloud left-cloud" src="images/cloud.png" alt="cloud">
+    <img class="rounded mx-auto d-block mountain" src="images/mountain.png" alt="cloud">
+    <img class="cloud right-cloud" src="images/cloud.png" alt="cloud">
+    <canvas id="c"></canvas>
+  </section>
+
+
+  <section id="profile">
+    <h1>Perfil</h1>
+    <h5>Desenvolvedor Web e Mobile</h5>
+    <hr>
+    <div class="row">
+      <div class="col-lg-4 about-container">
+        <h3>Sobre mim</h3>
+        <p>
+          Engenheiro da Computação com especialização no desenvolvimento de aplicativos para o sistema operacional IOS e Android. Amante de programação com alguns projetos já desenvolvidos.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <img src="images/profile.png" alt="Lucas Feitosa de Freitas" width="246" height="246" />
+      </div>
+      <div class="col-lg-4 about-container info">
+        <h3>Informações</h3>
+        <p>
+          <strong>Nome:</strong><br />
+          Lucas Feitosa de Freitas<br />
+          <strong>Idade:</strong><br />
+          24 Anos<br />
+          <strong>Localização:</strong><br />
+          Cidade Guará, Distrito Federal, Brasil </p>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences">
+    <h1>Experiências </h1>
+    <hr>
+    <h3>Formação Acadêmica</h3>
+    <div class="experiences">
+
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>Universidade Católica de Brasília</h4>
+          <p class="experience-period">
+            Fev 2015 -
+            Dez 2015 </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Apple Developer Academy (Antigo BEPiD) - Curso de Capacitação</h4>
+          <p class="hidden-phone">
+            O programa oferece aos estudantes a oportunidade de implementar as suas próprias ideias, aprendendo e experienciando o desenvolvimento de um aplicativo ou jogo
+            desde a sua concepção até a sua efetiva publicação na App Store. Além disto, recebem capacitação e tutoria em empreendedorismo, comunicação e marketing.
+          </p>
+          <i class="marker fas fa-map-marker-alt"> <span>QS 7 - Taguatinga, Brasília - DF</span> </i>
+
+        </div>
+      </div>
+
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>Centro Universitário IESB</h4>
+          <p class="experience-period">
+            Ago 2013 -
+            Dez 2014 </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Técnico em Informática para a Internet</h4>
+
+          <p class="hidden-phone">
+            Curso profissionalizante pelo Programa Nacional de Acesso ao Ensino Técnico e Emprego (Pronatec) onde obtive conhecimentos com as tecnlogias web para estruturação de sites tais como Html, Css e JavaScript e também com a criação de
+            pequenos servidores web utilizando Php. </p>
+          <i class="marker fas fa-map-marker-alt"><span> SGAS Quadra 613/614 - Asa Sul, Brasília - DF</span> </i>
+
+
+        </div>
+      </div>
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>Centro universitário IESB</h4>
+          <p class="experience-period">
+            Mar 2013 -
+            Dez 2017 </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Bacharelado em Engenharia da Computação</h4>
+
+          <p class="hidden-phone">
+            Formando com Láurea Acadêmica o curso de Engenharia da Computação me proporcionou diversos conhecimentos onde esses podem ser aplicados no mercado de trabalho para buscar soluções inovadoras, eficientes e sustentáveis para os diversos
+            tipos de problenas. </p>
+          <i class="marker fas fa-map-marker-alt"> <span> SGAS Quadra 613/614 - Asa Sul, Brasília - DF</span></i>
+
+        </div>
+      </div>
+
+
+    </div>
+    <hr>
+    <h3>Atuação Profissional </h3>
+    <div class="experiences">
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>BEPiD (Brazilian Education Program For Ios Development)</h4>
+          <p class="experience-period">
+            Fev 2015 -
+            Dez 2015 </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Estágiario - Desenvolvedor IOS</h4>
+          <p class="hidden-phone">
+            Desenvolvimento de aplicações para IOS com as linguagens de programação Swift e ObjC utilizando ferramentas como Git, Trello, Slack e metodologias agéis para o gerenciamento do projeto.
+          </p>
+          <i class="marker fas fa-map-marker-alt"> <span>QS 7 - Taguatinga, Brasília - DF</span> </i>
+
+        </div>
+      </div>
+
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>Procuradoria Geral da República</h4>
+          <p class="experience-period">
+            Nov 2016 -
+            Jan 2018 </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Estágiario - Desenvolvedor WEB</h4>
+
+          <p class="hidden-phone">
+            Desenvolvimento do Sistema Nacional de Cálculo utilizando tecnologias Web (HTML, CSS, JS e AJAX) com ferramentas Oracle (PL/SQL e RAD-APEX). Realizando atividades de levantamento de requisitos, modelagem, análise de negócio e
+            documentação das regras de negócio utilizando o Documento Geral de Aplicações. </p>
+          <i class="marker fas fa-map-marker-alt"><span> St. de Administração Federal Sul Q. 4 Conjunto C - Brasília - DF</span> </i>
+
+
+        </div>
+      </div>
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>First Decision</h4>
+          <p class="experience-period">
+            Mar 2019 -
+            Atual </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>Desenvolvedor Mobile Junior</h4>
+          <p class="hidden-phone">
+            Desenvolvimento de Aplicações Android com Java e IOS com Swift, utilizando tecnologias de IOT, tais como MQTT e REST com arquitetura VIPER (View,Presenter,Interactor,Entity,Router), Beacons, sensores externos e Arduino.
+          </p>
+          <i class="marker fas fa-map-marker-alt"> <span>Edificio Parque Brasilia - SIG, Brasília - DF</span> </i>
+
+        </div>
+      </div>
+
+      <div class="experience row">
+        <div class="col-lg-4">
+          <h4>Centro universitário IESB</h4>
+          <p class="experience-period">
+            Mai 2019 -
+            Atual </p>
+        </div>
+        <div class="col-lg-8">
+
+          <h4>IESB Lab</h4>
+
+          <p class="hidden-phone">
+           IESB Lab é uma incubadora de startups e espaço de trabalho colaborativo destinado aos alunos e egressos, que tem como missão promover o empreendedorismo na Instituição, incentivando os estudantes a desenvolverem oportunidades de negócios inovadores. </p>
+          <i class="marker fas fa-map-marker-alt"> <span> SGAN Quadra 609 Módulo D - Asa Norte</span></i>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section id="habilities">
+    <h1>Habilidades</h1>
+    <div class="row row-tr">
+      <div class="col">
+        <img class="img-h" src="images/xcode.png" alt="xcode" width="96px" height="96px">
+      </div>
+      <div class="col">
+        <h3>Aplicações Mobile</h3>
+        <p>Desenvolvimento mobile utilizando a linguagem de programação Swift, Objective C e Xcode IDE</p>
+      </div>
+    </div>
+    <div class="row row-tl">
+      <div class="col">
+        <h3>Fron-End Web</h3>
+        <p>Desenvolvimento Web utilizando tecnlogias front-end HTML, CSS, Bootstrap 4, Javascipt e JQuery</p>
+      </div>
+      <div class="col">
+        <img class="img-h" src="images/web.png" alt="">
+      </div>
+    </div>
+    <div class="row row-tr">
+      <div class="col">
+        <img class="img-h" src="images/server.png" alt="">
+      </div>
+      <div class="col">
+        <h3>Servidores Web</h3>
+        <p>Configuração de servidores em ambiente Linux e desenvolvimento utilizando Node.js e PHP </p>
+      </div>
+    </div>
+    <div class="row row-tl">
+      <div class="col">
+        <h3>Banco de dados</h3>
+        <p>Experiência com MYSql, Oracle, SQLite e MongoDB</p>
+      </div>
+      <div class="col">
+        <img class="img-h" src="images/database.png" alt="">
+      </div>
+    </div>
+
+  </section>
+
+  <section id="portifolio">
+    <h1 class="my-4">Projetos desenvolvidos</h1>
+    <div class="row">
+      <div class="col-lg-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="images/eco.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">EcoRec</a>
+            </h4>
+            <p class="card-text">O projeto consiste em construir uma lixeira de coleta seletiva capaz de avisar quando a mesma está
+cheia e mandando esta informação a um sistema. Este poderá traçar a melhor rota para que o percurso do
+funcionário que irá executar a coleta seja a menor possível e que a coleta seja mais eficiente.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 portfolio-item">
+        <div class="card h-100">
+          <a href="#"><img class="card-img-top" src="images/easy.png" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="#">EasyTracking</a>
+            </h4>
+            <p class="card-text">O projeto propõe um sistema de validação de itens por meio do uso de QRCodes e de degradação reversível baseada no algoritmo Reed Solomon, código corretor de erro. O sistema proposto deve validar o status de um produto, gravando informações corrompidas em um QR Code, as quais serão corrigidas em um sistema mobile por meio do download de uma redundância através de um sistema web.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="rodape">
+    <button class="btn btn-dark btn-md download-button" type="button"><i class="far fa-envelope"></i> <a class="contact" href="mailto:contato@lucasfeitosa.tech">Entre em contato</a></button>
+    <p>@2019 Lucas Feitosa de Freitas.</p>
+    <a href="https://icons8.com/icon/51974/xcode">Xcode icon by Icons8</a>
+    <a href="https://icons8.com/icon/11973/database">Database icon by Icons8</a>
+    <a href="https://icons8.com/icon/13051/server">Server icon by Icons8</a>
+    <a href="https://icons8.com/icon/32313/responsive">Responsive icon by Icons8</a>
+  </section>
+
+
+<script src="js/waves.js" charset="utf-8"></script>
+</body>
+
+</html>

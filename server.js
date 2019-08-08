@@ -1,7 +1,23 @@
 
 const express = require('express');
+const bodyParser = require('body-parser');
+const qr = require('qr-image');
+const ejs = require('ejs');
+const fs = require('fs');
+
 const app = express();
 app.use(express.static('public'));
+app.set('view engine', 'ejs')
+
+// Set static folder
+app.use(express.static('./public'))
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+
 const path = require('path');
 
 app.get('/', (req, res) => {
@@ -9,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/easytracking', (req, res) => {
-  res.json({ ok: true });
+  res.render('easytracking');
 });
 
 app.get('/autotreinamento/QA',(req,res)=>{
