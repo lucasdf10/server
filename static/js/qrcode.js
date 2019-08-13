@@ -562,7 +562,7 @@ var qrcode = function() {
       var size = _this.getModuleCount() * cellSize + margin * 2;
 
       var img = '';
-      img += '<img';
+      img += '<img class="img-fluid"';
       img += '\u0020src="';
       img += _this.createDataURL(cellSize, margin);
       img += '"';
