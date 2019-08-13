@@ -30,8 +30,7 @@ app.get('/easytracking', (req, res) => {
 app.post('/easytracking', (req, res, next) => {
   // Get the text to generate QR code
   let qr_txt = req.body.qr_text;
-  
-  // Generate QR Code from text
+  console.log(qr_txt);  // Generate QR Code from text
   var qr_png = qr.imageSync(qr_txt,{ type: 'png'})
 
   // Generate a random file name 
