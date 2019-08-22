@@ -194,9 +194,20 @@ var generateMessage = function(b,id,text){
         var code = numBytes[i];
         charBytes = charBytes + String.fromCharCode(code);
     }
-    //console.log(charBytes.length);
+    var idBits = "";
+    for(i=0;i<id.length;i++){
+        var hex = id[i];
+        idBits = idBits + hex2bin(hex);
+    }
+    var idCodes = bitsArray2Int(idBits);
+    var idBytes = "";
+    for(i=0;i<idCodes.length;i++){
+        var code = idCodes[i];
+        idBytes = idBytes + String.fromCharCode(code);
+    }
+    console.log(idBytes.length);
     var bits = "";
-    var message =  m + id + charBytes ;
+    var message =  m + id+ charBytes ;
     return message;
 }
 
@@ -210,6 +221,10 @@ var addPadding = function(byte,bitsSize) {
     var newByte = "0".repeat(padding) + byte;
     return newByte;
 };
+
+var hex2bin = function (hex){
+    return (parseInt(hex, 16).toString(2)).padStart(4, '0');
+}
 
 /* 
  Implementação do RS abaixo...
