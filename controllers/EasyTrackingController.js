@@ -36,8 +36,8 @@ var create_qrcode = function(text) {
     var redu = encode2BitsInfo(y);
     b = encode6BitsInfo(y,redu);
     var message = generateMessage(b,id,text);
-    console.log(message);
-    qr.addData(message);
+    console.log(message.length);
+    qr.addData(message,'Byte');
     qr.make();
     return qr.createSvgTag({ cellSize: 4, margin: 0, xscalable: true });
     //  return qr.createImgTag();
@@ -153,7 +153,7 @@ var encode6BitsInfo = function(y,redu) {
         //console.log("padding: " + padding);
         bitsInfo = bitsInfo + "0".repeat(padding);
     }
-    //console.log(bitsInfo.length);
+    console.log(bitsInfo.length/8);
     return bitsArray2Int(bitsInfo);
 };
 
@@ -183,6 +183,7 @@ var generateMessage = function(b,id,text){
         var code = b[i];
         m = m + String.fromCharCode(code);
     }
+    console.log(m.length + " " + m);
     var bitsCount = text.length.toString(2);
     bitsCount = addPadding(bitsCount,16);
     //console.log(bitsCount);
@@ -195,7 +196,7 @@ var generateMessage = function(b,id,text){
     }
     //console.log(charBytes.length);
     var bits = "";
-    var message = charBytes + id + m;
+    var message =  m + id + charBytes ;
     return message;
 }
 
