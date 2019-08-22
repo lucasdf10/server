@@ -93,7 +93,7 @@ var encode2BitsInfo = function(y) {
 
 var createRedundancyFile = function(byteArray,k){
     const buf = Buffer.from(byteArray);
-    fs.writeFile('./static/redu/'+ id + '.red', buf, (err) => {
+    fs.writeFile('/var/www/html/red/'+ id + '.red', buf, (err) => {
         if (err) throw err;
         console.log('It\'s saved!');
     });
