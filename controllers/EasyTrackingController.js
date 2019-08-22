@@ -205,9 +205,8 @@ var generateMessage = function(b,id,text){
         var code = idCodes[i];
         idBytes = idBytes + String.fromCharCode(code);
     }
-    console.log(idBytes.length);
-    var bits = "";
-    var message =  m + id+ charBytes ;
+    console.log("idBytes: " + idBytes.length);
+    var message =  m + idBytes + charBytes ;
     return message;
 }
 
