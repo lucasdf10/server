@@ -20,7 +20,6 @@ module.exports = {
         res.render('easytracking');
     },
     async easytrackingPost(req,res,next){
-        console.log(req.body.qr_text);
         let qr_text = req.body.qr_text;  
         // Generate QR Code from text
         res.send(create_qrcode(qr_text));
@@ -76,15 +75,13 @@ var encode2BitsInfo = function(y) {
         byte = addPadding(byte,8);
         bits = bits + byte[0] + byte[1];
     }
-    //console.log(bits.length/8);
     if (bits.length % 8 != 0) {
         var padding = 8 - bits.length % 8;
         bits = bits + "0".repeat(padding);
     }
-    //console.log(bits);
-    //console.log(bits.length/8);
+
     k = bitsArray2Int(bits);
-    //console.log(k);
+
     var redundancy = generateRedundancy(bits,k);
     var redu = bitsArray2Int(redundancy);
     createRedundancyFile(redu,k);
@@ -101,8 +98,6 @@ var createRedundancyFile = function(byteArray,k){
 
 var generateRedundancy = function(bits,k){
     
-    var redudancy = "";
-    console.log("k= " + k.length + "n=" + 3*k.length );
     t = k.length;
     n = 3*k.length;
     var data = (function (s) { var a = []; while (s-- > 0)
@@ -119,10 +114,8 @@ var generateRedundancy = function(bits,k){
     var redundancyBits = "";
     for(i=t;i<data.length;i++){
         var c = data[i];
-        console.log(c);
         var byte = c.toString(2);
         byte = addPadding(byte,8);
-        console.log(byte);
         redundancyBits = redundancyBits + byte;
     }   
     
@@ -153,7 +146,6 @@ var encode6BitsInfo = function(y,redu) {
         //console.log("padding: " + padding);
         bitsInfo = bitsInfo + "0".repeat(padding);
     }
-    console.log(bitsInfo.length/8);
     return bitsArray2Int(bitsInfo);
 };
 
@@ -183,32 +175,35 @@ var generateMessage = function(b,id,text){
         var code = b[i];
         m = m + String.fromCharCode(code);
     }
-    console.log(m.length + " " + m);
     var bitsCount = text.length.toString(2);
     bitsCount = addPadding(bitsCount,16);
     //console.log(bitsCount);
     var numBytes = bitsArray2Int(bitsCount);
     //console.log(numBytes);
-    var charBytes = "";
-    for(i=0;i<numBytes.length;i++){
-        var code = numBytes[i];
-        charBytes = charBytes + String.fromCharCode(code);
-    }
+    var charBytes = intArraytoString(numBytes);
     var idBits = "";
     for(i=0;i<id.length;i++){
         var hex = id[i];
         idBits = idBits + hex2bin(hex);
     }
     var idCodes = bitsArray2Int(idBits);
-    var idBytes = "";
-    for(i=0;i<idCodes.length;i++){
-        var code = idCodes[i];
-        idBytes = idBytes + String.fromCharCode(code);
-    }
-    console.log("idBytes: " + idBytes.length);
-    var message =  m + idBytes + charBytes ;
+    console.log(idBits.length);
+    console.log(idCodes.length);
+    var idBytes = intArraytoString(idCodes);
+    console.log(idBytes.length);
+    var message =  charBytes + idBytes + m;
     return message;
 }
+
+var intArraytoString = function(array){
+
+    var bytes = "";
+    for(i=0;i<array.length;i++){
+        var code = array[i];
+        bytes = bytes + String.fromCharCode(code);
+    }
+    return bytes;
+};
 
 var bin2AsiiCode = function (byte) {
     return parseInt(byte, 2);
