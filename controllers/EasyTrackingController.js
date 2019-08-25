@@ -35,11 +35,9 @@ var create_qrcode = function(text) {
     var redu = encode2BitsInfo(y);
     b = encode6BitsInfo(y,redu);
     var message = generateMessage(b,id,text);
-    console.log(message.length);
     qr.addData(message,'Byte');
     qr.make();
     return qr.createSvgTag({ cellSize: 4, margin: 0, xscalable: true });
-    //  return qr.createImgTag();
 };
 
 var encode7BitsInfo = function(text) {
@@ -52,7 +50,6 @@ var encode7BitsInfo = function(text) {
                 byte = addPadding(byte,7);
             bits = bits + byte;
         } else {
-            console.log(c + ' is NOT an ASCII character');
             return;
         }
     }
@@ -79,7 +76,6 @@ var encode2BitsInfo = function(y) {
         var padding = 8 - bits.length % 8;
         bits = bits + "0".repeat(padding);
     }
-
     k = bitsArray2Int(bits);
 
     var redundancy = generateRedundancy(bits,k);
@@ -108,11 +104,8 @@ var generateRedundancy = function(bits,k){
     var gf = new GenericGF(285, 256, 0);
     var encoder = new ReedSolomonEncoder(gf);
     encoder.encode(data, (n - t));
-    for(var i=0;i<k.length;i++){
-        data[i] = 0;
-    }
     var redundancyBits = "";
-    for(i=t;i<data.length;i++){
+    for(i=t;i<n;i++){
         var c = data[i];
         var byte = c.toString(2);
         byte = addPadding(byte,8);
@@ -129,6 +122,7 @@ var encode6BitsInfo = function(y,redu) {
     for (var i = 0; i < y.length; i++) {
         var c = y[i];
         var byte = c.toString(2);
+        byte = addPadding(byte,8); 
         var xor1 = byte[2] ^ redu[count];
         count++; 
         var xor2 = byte[3] ^ redu[count];
@@ -137,13 +131,10 @@ var encode6BitsInfo = function(y,redu) {
         count++;
         var xor4 = byte[5] ^ redu[count];
         count++;
-        byte = addPadding(byte,8); 
         bitsInfo = bitsInfo + xor1 + xor2 + xor3 + xor4 + byte[6] + byte[7];
     }
-    //console.log(bitsInfo.length);
     if (bitsInfo.length % 8 != 0) {
         var padding = 8 - bitsInfo.length % 8;
-        //console.log("padding: " + padding);
         bitsInfo = bitsInfo + "0".repeat(padding);
     }
     return bitsArray2Int(bitsInfo);
@@ -157,11 +148,9 @@ var bitsArray2Int = function(bits) {
     for (var i = 0; i < bits.length; i++) {
         byte = byte + bits[i];
         bitCount++;
-        //console.log(bitCount);
         if(bitCount == 8){
             bitCount = 0;
             bytes[byteCount] = bin2AsiiCode(byte);
-            //console.log(bytes[byteCount]);
             byte = "";
             byteCount++;
         }
@@ -177,9 +166,7 @@ var generateMessage = function(b,id,text){
     }
     var bitsCount = text.length.toString(2);
     bitsCount = addPadding(bitsCount,16);
-    //console.log(bitsCount);
     var numBytes = bitsArray2Int(bitsCount);
-    //console.log(numBytes);
     var charBytes = intArraytoString(numBytes);
     var idBits = "";
     for(i=0;i<id.length;i++){
@@ -187,10 +174,7 @@ var generateMessage = function(b,id,text){
         idBits = idBits + hex2bin(hex);
     }
     var idCodes = bitsArray2Int(idBits);
-    console.log(idBits.length);
-    console.log(idCodes.length);
     var idBytes = intArraytoString(idCodes);
-    console.log(idBytes.length);
     var message =  charBytes + idBytes + m;
     return message;
 }
