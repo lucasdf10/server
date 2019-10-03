@@ -54,10 +54,14 @@ var encode7BitsInfo = function(text) {
         }
     }
 
+    //console.log(bits);
+    //console.log(bits.length)
     if (bits.length % 8 != 0) {
         var padding = 8 - bits.length % 8;
         bits = bits + "0".repeat(padding);
     }
+    //console.log(bits);
+    //console.log(bits.length)
     y = bitsArray2Int(bits);
     return y;
     
@@ -77,9 +81,11 @@ var encode2BitsInfo = function(y) {
         bits = bits + "0".repeat(padding);
     }
     k = bitsArray2Int(bits);
+    console.log(k);
 
     var redundancy = generateRedundancy(bits,k);
     var redu = bitsArray2Int(redundancy);
+    console.log(redu);
     createRedundancyFile(redu,k);
     return redundancy;
 };
@@ -118,6 +124,7 @@ var generateRedundancy = function(bits,k){
 var encode6BitsInfo = function(y,redu) {
 
     var bitsInfo = "";
+    var bitsInfo2 = "";
     var count = 0;
     for (var i = 0; i < y.length; i++) {
         var c = y[i];
@@ -132,11 +139,15 @@ var encode6BitsInfo = function(y,redu) {
         var xor4 = byte[5] ^ redu[count];
         count++;
         bitsInfo = bitsInfo + xor1 + xor2 + xor3 + xor4 + byte[6] + byte[7];
+        bitsInfo2 =  bitsInfo2 + byte[0] + byte[1] + xor1 + xor2 + xor3 + xor4 + byte[6] + byte[7];
     }
+
+    console.log(bitsInfo);
     if (bitsInfo.length % 8 != 0) {
         var padding = 8 - bitsInfo.length % 8;
         bitsInfo = bitsInfo + "0".repeat(padding);
     }
+    
     return bitsArray2Int(bitsInfo);
 };
 
@@ -176,6 +187,7 @@ var generateMessage = function(b,id,text){
     var idCodes = bitsArray2Int(idBits);
     var idBytes = intArraytoString(idCodes);
     var message =  charBytes + idBytes + m;
+    console.log(message.length);
     return message;
 }
 
