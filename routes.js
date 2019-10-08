@@ -12,6 +12,7 @@ routes.use(
 const indexController = require('./controllers/IndexController');
 const easytrackingController = require('./controllers/EasyTrackingController');
 const autotreinamentoController = require('./controllers/AutotreinamentoController');
+const cowipController = require('./controllers/CowipController');
 
 //Routes para IndexController
 routes.get('/', indexController.index);
@@ -23,5 +24,8 @@ routes.post('/easytracking',easytrackingController.easytrackingPost);
 //Routes para autotreinamento
 routes.get('/autotreinamento/QA',autotreinamentoController.questionAndAnswers);
 routes.get('/autotreinamento/links',autotreinamentoController.links);
+
+//Routes para Cowip
+routes.get('/cowip',cowipController.cowip);
 
 module.exports = routes;
