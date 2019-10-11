@@ -26,6 +26,7 @@ routes.get('/autotreinamento/QA',autotreinamentoController.questionAndAnswers);
 routes.get('/autotreinamento/links',autotreinamentoController.links);
 
 //Routes para Cowip
-routes.get('/cowip',cowipController.cowip);
+routes.get('/cowip/getCoworkings',cowipController.getCoworkings);
+routes.get('/cowip/getDaysBooked',cowipController.getDaysBooked);
 
 module.exports = routes;

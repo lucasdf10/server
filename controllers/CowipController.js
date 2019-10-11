@@ -1,5 +1,5 @@
 module.exports = {
-    async cowip(req,res){
+    async getCoworkings(req,res){
         var o = {};
         var key = "coworking";
 
@@ -74,6 +74,33 @@ module.exports = {
         o[key].push(coworking6);
         o[key].push(coworking7);
 
+        res.json(o);
+    },
+
+    async getDaysBooked(req,res){
+        var o = {};
+        var key = "bookingDates";
+
+        var num = 30;
+        var randomDate = function randomDate(start, end) {
+            var d = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+        
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+        
+            return [year, month, day].join('-');
+        }
+        o[key] = [];
+
+        for(var i=1;i<=num;i++){     
+            var date = {
+                bookingDate:randomDate( new Date(),new Date(2020,10,11))
+            }     
+            o[key].push(date);
+        }
         res.json(o);
     }
 }
