@@ -100,7 +100,30 @@ module.exports = {
                 bookingDate:randomDate( new Date(),new Date(2020,10,11))
             }     
             o[key].push(date);
+        
         }
+        res.json(o);
+    },
+
+    async getServicesAvailable(req,res){
+        var o = {};
+        var key = "bookingType";
+        o[key] = [];
+        var bookingtype = {
+            id:1,
+            title:"Mesa Individual",
+            ds:"Breve descrição do serviço a ser utilizado pelo sistema."
+        };
+
+        o[key].push(bookingtype);
+        bookingtype = {
+            id:2,
+            title:"Sala de Reunião",
+            ds:"Breve descrição do serviço a ser utilizado pelo sistema."
+        };
+
+        o[key].push(bookingtype);
+    
         res.json(o);
     }
 }
