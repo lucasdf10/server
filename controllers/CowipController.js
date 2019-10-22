@@ -112,14 +112,16 @@ module.exports = {
         var bookingtype = {
             id:1,
             title:"Mesa Individual",
-            ds:"Breve descrição do serviço a ser utilizado pelo sistema."
+            ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
+            price:30
         };
 
         o[key].push(bookingtype);
         bookingtype = {
             id:2,
             title:"Sala de Reunião",
-            ds:"Breve descrição do serviço a ser utilizado pelo sistema."
+            ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
+            price:40
         };
 
         o[key].push(bookingtype);
