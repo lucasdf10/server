@@ -30,5 +30,6 @@ routes.get('/cowip/getCoworkings',cowipController.getCoworkings);
 routes.get('/cowip/getDaysBooked',cowipController.getDaysBooked);
 routes.get('/cowip/getServicesAvailable',cowipController.getServicesAvailable);
 routes.get('/cowip/getPhoneCode',cowipController.getPhoneCode);
+routes.post('/cowip/user',cowipController.user);
 
 module.exports = routes;

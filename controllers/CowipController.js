@@ -9,6 +9,11 @@ module.exports = {
         res.json(o);
     },
 
+    async user(req,res,next){
+        console.log(req.body)
+        res.json("ok");
+    },
+
 
     async getCoworkings(req,res){
         var o = {};
