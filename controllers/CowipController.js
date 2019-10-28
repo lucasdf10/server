@@ -1,4 +1,15 @@
 module.exports = {
+
+    async getPhoneCode(req,res){
+        var phone = req.query.phone;
+        //sendSms(phone);
+        var o = {};
+        var key = "code";
+        o[key] = Math.floor(100000 + Math.random() * 900000).toString(); 
+        res.json(o);
+    },
+
+
     async getCoworkings(req,res){
         var o = {};
         var key = "coworking";
