@@ -9,7 +9,10 @@ app.set('view engine', 'ejs');
 // Set static folder
 app.use(express.static('static'));
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(require('./routes'));
+
 
 
 const port = 3000;

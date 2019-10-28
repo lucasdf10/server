@@ -1,14 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const routes = new express.Router();
-
-routes.use(
-    bodyParser.urlencoded({
-      extended: true
-    })
-  );
-  
-
+const routes = new express.Router()
 const indexController = require('./controllers/IndexController');
 const easytrackingController = require('./controllers/EasyTrackingController');
 const autotreinamentoController = require('./controllers/AutotreinamentoController');

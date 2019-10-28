@@ -10,8 +10,8 @@ module.exports = {
     },
 
     async user(req,res,next){
-        console.log(req.body)
-        res.json("ok");
+        
+        res.json(req.body);
     },
 
 
