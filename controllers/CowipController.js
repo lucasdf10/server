@@ -12,7 +12,12 @@ module.exports = {
     async user(req,res,next){
         console.log(req.body);
         res.json(req.body);
+    }, 
+    async card(req,res,next){
+        console.log(req.body);
+        res.json(req.body);
     },
+
 
 
     async getCoworkings(req,res){
