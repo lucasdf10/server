@@ -148,5 +148,34 @@ module.exports = {
         o[key].push(bookingtype);
     
         res.json(o);
+    },
+
+    async getCards(req,res){
+        var o = {};
+        var key = "card";
+        o[key] = [];
+
+        var card = {
+            id:1,
+            number:"1111222233334444",
+            expire:"11/2021",
+            cvv:"123"
+        };
+
+        o[key].push(card);
+        card = {
+            id:2,
+            number:"4444333322221111",
+            expire:"11/2021",
+            cvv:"123"
+        };
+
+        o[key].push(card);
+
+        res.json(o);
+
+
     }
+
+    
 }
