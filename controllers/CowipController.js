@@ -166,7 +166,7 @@ module.exports = {
         card = {
             id:2,
             number:"4444333322221111",
-            expire:"11/2021",
+            expire:"06/2024",
             cvv:"123"
         };
 
