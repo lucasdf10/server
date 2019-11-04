@@ -9,6 +9,14 @@ module.exports = {
         res.json(o);
     },
 
+    async getDoorCode(req,res){
+
+        var o = {};
+        var key = "code";
+        o[key] = Math.floor(1000 + Math.random() * 9000).toString(); 
+        res.json(o);
+    },
+
     async user(req,res,next){
         console.log(req.body);
         res.json(req.body);
@@ -177,5 +185,6 @@ module.exports = {
 
     }
 
-    
+
+
 }

@@ -24,5 +24,6 @@ routes.get('/cowip/getPhoneCode',cowipController.getPhoneCode);
 routes.post('/cowip/user',cowipController.user);
 routes.post('/cowip/card',cowipController.card);
 routes.get('/cowip/getCards',cowipController.getCards);
+routes.get('/cowip/getDoorCode',cowipController.getDoorCode);
 
 module.exports = routes;
