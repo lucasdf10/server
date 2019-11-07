@@ -195,7 +195,7 @@ module.exports = {
             date:"20-11-2019",
             address:"SIG Quadra 1, lote 5",
             dates:dates,
-            bookintType:{
+            bookingType:{
                 id:2,
                 title:"Mesa Individual",
                 ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
@@ -218,7 +218,7 @@ module.exports = {
             date:"20-11-2019",
             address:"SIG Quadra 1, lote 5",
             dates:dates,
-            bookintType:{
+            bookingType:{
                 id:1,
                 title:"Sala de reunião",
                 ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
