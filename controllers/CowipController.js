@@ -222,7 +222,7 @@ module.exports = {
                 id:1,
                 title:"Sala de reunião",
                 ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
-                price:30
+                price:40
             }
         };
 
