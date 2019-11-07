@@ -111,17 +111,6 @@ module.exports = {
         var key = "bookingDates";
 
         var num = 30;
-        var randomDate = function randomDate(start, end) {
-            var d = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())),
-                month = '' + (d.getMonth() + 1),
-                day = '' + d.getDate(),
-                year = d.getFullYear();
-        
-            if (month.length < 2) month = '0' + month;
-            if (day.length < 2) day = '0' + day;
-        
-            return [year, month, day].join('-');
-        }
         o[key] = [];
 
         for(var i=1;i<=num;i++){     
@@ -129,7 +118,6 @@ module.exports = {
                 bookingDate:randomDate( new Date(),new Date(2020,10,11))
             }     
             o[key].push(date);
-        
         }
         res.json(o);
     },
@@ -183,8 +171,76 @@ module.exports = {
         res.json(o);
 
 
+    },
+
+    async getMyBookings(req,res) {
+
+        var o = {};
+        var key = "mybookings";
+        o[key] = [];
+
+        var dates = [];
+
+        var num = 5;
+        for(var i=1;i<=num;i++){     
+            var date = {
+                selectedDay:randomDate( new Date(),new Date(2019,11,20))
+            }     
+            dates.push(date);
+        }
+
+        var booking = {
+            id:1,
+            price:"420",
+            date:"20-11-2019",
+            address:"SIG Quadra 1, lote 5",
+            dates:dates,
+            bookintType:{
+                id:2,
+                title:"Mesa Individual",
+                ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
+                price:30
+            }
+        };
+
+        num = 1;
+        dates = [];
+        for(var i=1;i<=num;i++){     
+            var date = {
+                selectedDay:randomDate( new Date(),new Date(2019,11,20))
+            }     
+            dates.push(date);
+        }
+        o[key].push(booking);
+        booking = {
+            id:1,
+            price:"580",
+            date:"20-11-2019",
+            address:"SIG Quadra 1, lote 5",
+            dates:dates,
+            bookintType:{
+                id:1,
+                title:"Sala de reunião",
+                ds:"Breve descrição do serviço a ser utilizado pelo sistema.",
+                price:30
+            }
+        };
+
+        o[key].push(booking);
+
+        res.json(o);
+
     }
+}
 
+var randomDate = function randomDate(start, end) {
+    var d = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
 
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
 
+    return [year, month, day].join('-');
 }
