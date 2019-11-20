@@ -4,6 +4,7 @@ const indexController = require('./controllers/IndexController');
 const easytrackingController = require('./controllers/EasyTrackingController');
 const autotreinamentoController = require('./controllers/AutotreinamentoController');
 const cowipController = require('./controllers/CowipController');
+const alienController = require('./controllers/AlienController');
 
 //Routes para IndexController
 routes.get('/', indexController.index);
@@ -26,5 +27,9 @@ routes.post('/cowip/card',cowipController.card);
 routes.get('/cowip/getCards',cowipController.getCards);
 routes.get('/cowip/getDoorCode',cowipController.getDoorCode);
 routes.get('/cowip/getMyBookings',cowipController.getMyBookings);
+
+//Routes para Alien
+
+routes.get('/alien/getStocks',alienController.getStocks);
 
 module.exports = routes;
