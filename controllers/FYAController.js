@@ -48,7 +48,7 @@ module.exports = {
             address:"Deck da Asa Norte",
             latitude:"-15.733191",
             longitude:"-47.886390",
-            image:"http://4.bp.blogspot.com/-YuJCA5fIHKU/UkDdaJip2kI/AAAAAAAAANA/U9Qck4J2Nk4/s1600/02.jpg",
+            image:"https://dbui4lb3qzbcx.cloudfront.net/imagens/db29859eb260eaf1f980a18149c16feb.jpeg",
             price:"R$ 70,00"
         }
 
