@@ -5,6 +5,7 @@ const easytrackingController = require('./controllers/EasyTrackingController');
 const autotreinamentoController = require('./controllers/AutotreinamentoController');
 const cowipController = require('./controllers/CowipController');
 const alienController = require('./controllers/AlienController');
+const fyaController = require('./controllers/FYAController')
 
 //Routes para IndexController
 routes.get('/', indexController.index);
@@ -31,5 +32,9 @@ routes.get('/cowip/getMyBookings',cowipController.getMyBookings);
 //Routes para Alien
 
 routes.get('/alien/getStocks',alienController.getStocks);
+
+//Routes para FYA
+
+routes.get('/fya/getSports',fyaController.getSports);
 
 module.exports = routes;
