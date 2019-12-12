@@ -32,6 +32,7 @@ routes.get('/cowip/getMyBookings',cowipController.getMyBookings);
 //Routes para Alien
 
 routes.get('/alien/getStocks',alienController.getStocks);
+routes.get('/alien/getXml',alienController.getXml);
 
 
 //Routes para FYA
