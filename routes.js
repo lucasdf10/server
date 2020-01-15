@@ -2,6 +2,7 @@ const express = require('express');
 const routes = new express.Router()
 const indexController = require('./controllers/IndexController');
 const easytrackingController = require('./controllers/EasyTrackingController');
+const filetrackingController = require('./controllers/FileTrackingController');
 const autotreinamentoController = require('./controllers/AutotreinamentoController');
 const cowipController = require('./controllers/CowipController');
 const alienController = require('./controllers/AlienController');
@@ -13,6 +14,10 @@ routes.get('/', indexController.index);
 //Routes para EasyTrackingController
 routes.get('/easytracking',easytrackingController.easytrackingRender);  
 routes.post('/easytracking',easytrackingController.easytrackingPost);
+
+//Routes para FileTrackingController
+routes.get('/filetracking',filetrackingController.filetrackingRender);  
+routes.post('/filetracking',filetrackingController.filetrackingPost);
 
 //Routes para autotreinamento
 routes.get('/autotreinamento/QA',autotreinamentoController.questionAndAnswers);
