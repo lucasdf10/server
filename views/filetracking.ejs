@@ -56,24 +56,20 @@
     <script>
       document.querySelector('#gen').addEventListener('click', function () {
         // Get the text from input
-        var fileInput = document.getElementById("customFile");
+        let fileInput = document.getElementById("customFile");
 
         // files is a FileList object (similar to NodeList)
-        var files = fileInput.files;
+        let files = fileInput.files;
+        let blob = new Blob([files[0]],{type: 'image/png'})
 
         // object for allowed media types
-        var accept = {
+        let accept = {
         binary : ["image/png", "image/jpeg"],
         text   : ["text/plain", "text/css", "application/xml", "text/html"]
         };
 
-        var file;
-
-        
-        file = files[0];
-
         // if file type could be detected
-        if (file !== null) {
+        if (files[0] !== null) {
             var r = new FileReader();
             r.onload = function(){ 
                 
@@ -85,6 +81,7 @@
                     xhttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById('qr').innerHTML = this.responseText;
+                            fileInput.value = "";
                         }
                     };
                     xhttp.open("POST", "/filetracking", true);
@@ -96,7 +93,7 @@
                 }
             
             };
-            r.readAsArrayBuffer(file);
+            r.readAsArrayBuffer(blob);
         }
         
         
@@ -109,6 +106,12 @@
     $(".custom-file-input").on("change", function() {
   var fileName = $(this).val().split("\\").pop();
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    $("input[type='submit']").click(function(){
+        var $fileUpload = $("input[type='file']");
+        if (parseInt($fileUpload.get(0).files.length)>2){
+         alert("You can only upload a maximum of 2 files");
+        }
     });
     </script>
   </body>

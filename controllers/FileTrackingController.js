@@ -7,12 +7,12 @@ const crypto = require('crypto');
 var execSync = require('child_process').execSync;
 
 
-var id;
-var y;
-var k;
-var n;
-var t;
-var b;
+var id = ""
+var y = 0;
+var k = 0;
+var n = 0;
+var t = 0;
+var b = 0;
 var x = 0;
 
 
@@ -21,6 +21,14 @@ module.exports = {
         res.render('filetracking');
     },
     async filetrackingPost(req,res,next){
+        x = 0;
+        y = 0;
+        k = 0;
+        n = 0;
+        t = 0;
+        b = 0;
+        id = "";
+
         let bytes = req.body;
         for(var i in bytes){
             x++;
@@ -85,7 +93,7 @@ var encode2BitsInfo = function(y) {
 
 var createRedundancyFile = function(byteArray,k){
     const buf = Buffer.from(byteArray);
-    fs.writeFile('/var/www/html/red/'+ id + '.red', buf, (err) => {
+    fs.writeFile('/Users/lucas.freitas/Desktop/red/'+ id + '.red', buf, (err) => {
         if (err) throw err;
         //console.log('It\'s saved!');
     });
